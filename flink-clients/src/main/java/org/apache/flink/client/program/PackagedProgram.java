@@ -352,6 +352,7 @@ public class PackagedProgram implements AutoCloseable {
         }
 
         try {
+            /*TODO 调用用户代码的main方法*/
             mainMethod.invoke(null, (Object) args);
         } catch (IllegalArgumentException e) {
             throw new ProgramInvocationException(

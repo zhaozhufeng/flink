@@ -545,14 +545,16 @@ public class YarnClusterDescriptor implements ClusterDescriptor<ApplicationId> {
             }
         }
 
+        /*TODO 部署前检查：jar包路径、conf路径、yarn最大核数......*/
         isReadyForDeployment(clusterSpecification);
 
         // ------------------ Check if the specified queue exists --------------------
 
+        /*TODO 检查指定的yarn队列是否存在*/
         checkYarnQueues(yarnClient);
 
         // ------------------ Check if the YARN ClusterClient has the requested resources
-        // --------------
+        /*TODO 检查yarn是否有足够的资源*/
 
         // Create application via yarnClient
         final YarnClientApplication yarnApplication = yarnClient.createApplication();
@@ -603,6 +605,7 @@ public class YarnClusterDescriptor implements ClusterDescriptor<ApplicationId> {
         flinkConfiguration.setString(
                 ClusterEntrypoint.INTERNAL_CLUSTER_EXECUTION_MODE, executionMode.toString());
 
+        /*TODO 启动AppMaster*/
         ApplicationReport report =
                 startAppMaster(
                         flinkConfiguration,
