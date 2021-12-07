@@ -238,6 +238,7 @@ public abstract class ResourceManager<WorkerType extends ResourceIDRetrievable>
             slotManager.start(
                     getFencingToken(), getMainThreadExecutor(), new ResourceActionsImpl());
 
+            /*TODO 创建了Yarn的RM和NM的客户端，初始化并启动*/
             initialize();
         } catch (Exception e) {
             handleStartResourceManagerServicesException(e);

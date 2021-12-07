@@ -871,6 +871,7 @@ public class JobMaster extends PermanentlyFencedRpcEndpoint<JobMasterId>
         JobShuffleContext context = new JobShuffleContextImpl(jobGraph.getJobID(), this);
         shuffleMaster.registerJob(context);
 
+        /*TODO 真正启动JobMaster服务*/
         startJobMasterServices();
 
         log.info(
@@ -879,6 +880,7 @@ public class JobMaster extends PermanentlyFencedRpcEndpoint<JobMasterId>
                 jobGraph.getJobID(),
                 getFencingToken());
 
+        /*TODO 启动调度器*/
         startScheduling();
     }
 
