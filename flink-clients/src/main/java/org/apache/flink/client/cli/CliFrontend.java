@@ -221,7 +221,7 @@ public class CliFrontend {
     protected void run(String[] args) throws Exception {
         LOG.info("Running 'run' command.");
 
-        /*TODO 获取run动作，默认的配置项*/
+        /*TODO 获取run动作，默认的配置项。*/
         final Options commandOptions = CliFrontendParser.getRunCommandOptions();
 
         /*TODO 根据用户指定的配置项，进行解析*/
